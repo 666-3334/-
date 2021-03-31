@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<!-- 表格标签；表格是用来展示数据的
+    1.<table></table>是用来定义表格的标签
+    2.<tr></tr>用来定义表格中的行，必须嵌套在<table></table>中
+    3.<td></td>用来定义表格中的单元格，必须嵌套在<tr></tr>中
+
+    表头单元格标签
+    一般表头单元格位于第一行或者第一列，里面的文字会居中加粗
+    <th>表示HTML表格的表头部分，是表头单元格
+
+    表格属性————还是推荐在CSS里面写
+    align               表格相对周围元素的对齐方式              left/center/right
+    border              规定表格单元是否有边框                  数字或""
+    cellpadding         单元边沿与其内容之间的空白，默认1像素    像素值
+    cellspacing         单元格之间的空白，默认2像素             ~
+    width               表格的宽度                             像素值或百分比
+    height              表格的高度                             ~
+
+    表格结构标签
+    <thead>表示表格的头部区域，相对于<th>是一个区域,内部必须有<tr>标签
+    <tbody>表示表格的主体区域
+
+    合并单元格
+    1.方式
+        跨行    rowspan="单元格个数"
+        跨列    colspan="单元格个数"
+    2.目标单元格
+        跨行    最上侧单元格，写合并代码
+        跨列    最左侧单元格，写合并代码
+    3.步骤
+        确定合并方式
+        找到目标单元格，写。比如<td colspan="2"></td>
+        删除多余单元格
+ -->
+    <table align="center" border="1" cellpadding="20" cellspacing="0" width="10%" height="90">
+        <thead>
+            <tr>
+                <th>咕咕咕咕</th>
+                <th>lalallaal</th>
+                <th>hauhsuahsa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>咕咕</td>
+                <td>la</td>
+                <td>uahsa</td>
+            </tr>
+            <tr>
+                <td>咕咕咕</td>
+                <td>lallaal</td>
+                <td>hauahsa</td>
+            </tr>
+        </tbody>
+    </table><br><br>
+    <table align="center" border="1" cellpadding="20" cellspacing="0" width="10%" height="90">
+        <tr>
+            <td></td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+<!--列表标签——列表用来布局
+    1.无序列表（重点）
+        <ul>表示无序列表，一般会以项目符号呈现列表项，而列表项使用<li>定义
+        <ul></ul>中只能嵌套<li></li>,<li></li>相当于一个容器，可以容纳所以元素
+    2.有序列表
+        <ol>表示有序列表，排序以数字来显示，使用<li>来定义列表项
+        限制——和无序列表类似
+    3.自定义列表（重点）
+        <dl>表示自定义列表，与<dt>和<dd>一起使用
+        <dl>里面只能放<dt>和<dd>,<dt>和<dd>什么都能放
+ -->
+    华为的
+    <ul>
+        <li>荣耀10</li>
+        <li>华为p40</li>
+        <li>华为唱词盎100</li>
+    </ul>
+
+    粉丝排行
+    <ol>
+        <li>刘德华 10000</li>
+        <li>朱德 1290</li>
+        <li>花花 190</li>
+    </ol>
+    
+    小米官网
+    <dl>
+        <dt>关注我们</dt>
+        <dd>新浪微博</dd>
+        <dd>微信</dd>
+        <dd>练习我们</dd>
+    </dl>
+<!--表单标签
+    表单组成：表单域、表单控件（表单元素）、提示信息
+    1.表单域：包含表单元素的区域
+            <form>用于定义表单域，实现用户信息的收集和传递，就是传给服务器
+    2.表单元素
+            <input>输入表单元素---单标签，type属性
+            <label>标签为input元素定义标注
+                    绑定一个表单元素，点击<label>标签内的文本时，浏览器会自动将焦点转到或者选择对应的表单元素
+                    使用场景：增大选择时选择区域的面积，提高用户体验
+                    <label>里的for属性和相关元素的id属性相同
+            <select>定义下拉列表
+            <textarea>文本域元素
+                    使用场景：写自我介绍类的大框，多行输入
+ -->
+    <form >     
+<!-- type属性
+             text 文本框 用户可以输入如何任何文字 
+             password 定义密码框
+             radio单选按钮
+             checkbox复选框，实现多选
+             submit定义提交按钮
+             reset定义重置按钮
+             button定义可点击按钮（多数情况下用于JS启动脚本）
+             file定义输入字段和浏览按钮，供文件上传
+-->
+        <label for="yuhu">用户名：</label>
+        <input type="text" name="username" value="请输入与户名" maxlength="5" id="yuhu"> <br>
+        <!-- 加上value这个属性后，框内有字 -->
+        密码：<input type="password" name="pwd"><br>
+        婚姻转款：<label for="nan">男</label><input type="radio" name="sex" value="男" id="nan">女<input type="radio" name="sex" value="女"  checked="checked"> <br>
+        <!-- 没有加上name这个属性的时候，单选还实现不了，加了之后就可以了 -->
+        多选：吃饭<input type="checkbox" name="hobby" value="cf"> 睡觉 <input type="checkbox" name="hobby" value="jsia"><br>
+        <!-- 单选框和复选框有相同的name
+             checked属性主要针对单选和复选，页面打开时默认选择了某个选项
+             maxlength属性规定字符段的最大长度
+        -->
+        <input type="submit" value="免费注册">
+        <!-- 可以是单标签，加上value值来定义提交按钮里面的字 -->
+        <input type="reset" value="华为"><br>
+        <input type="button" value="获取验证码"><br>
+        <input type="file" ><br>
+        <!-- 下拉列表 
+            可以在<option>中定义selected="selected",设置为默认
+        -->
+        下拉选择
+        <select >
+            <option >汕头</option>
+            <option >河北</option>
+            <option selected>南京</option>
+            <option >北京</option>
+        </select>
+         <!--li
+        cols=每行的字符数，rows=显示的行数，实际用CSS来
+        字体顶>写才会在显示中居左开始
+        -->
+        文本域输入
+        <textarea cols="30" rows="10">
+          你知道吗
+        </textarea>
+    </form>
+</body>
+
+</html>
